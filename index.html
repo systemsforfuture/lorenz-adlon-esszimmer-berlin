@@ -1,534 +1,772 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lorenz Adlon Esszimmer ★★ — Berlin</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #080708;
-    --bg2: #0D0C0E;
-    --bg3: #131216;
-    --accent: #A08840;
-    --accent2: #C0A850;
-    --accent-dim: rgba(160,136,64,0.12);
-    --silver: #B0B4C0;
-    --silver2: #CCD0DC;
-    --text: #EAE8E6;
-    --text2: #AAA8A4;
-    --text3: #6A6866;
-    --border: rgba(255,255,255,0.06);
-    --border2: rgba(255,255,255,0.1);
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  /* Subtle Brandenburg Gate arch pattern */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image:
-      radial-gradient(ellipse at 50% 0%, rgba(160,136,64,0.06) 0%, transparent 50%);
-    pointer-events: none; z-index: 0;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenz Adlon Esszimmer | Fine Dining Berlin</title>
+    <meta name="description" content="Lorenz Adlon Esszimmer - Michelin-Stern Restaurant im Hotel Adlon Kempinski mit Blick auf das Brandenburger Tor. Moderne europäische Hochküche in Berlin.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 28px 60px;
-    display: flex; align-items: center; justify-content: space-between;
-    transition: background 0.4s, padding 0.4s;
-  }
-  nav.scrolled {
-    background: rgba(8,7,8,0.96);
-    backdrop-filter: blur(20px);
-    padding: 16px 60px;
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: var(--serif); font-size: 1.1rem; font-weight: 300;
-    letter-spacing: 0.14em; color: var(--text); text-decoration: none;
-    display: flex; flex-direction: column; line-height: 1.2;
-  }
-  .nav-logo-sub { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--accent2); text-transform: uppercase; }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a {
-    font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--text2); text-decoration: none; transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--accent2); }
-  .nav-cta {
-    font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--bg); background: var(--accent); padding: 10px 22px;
-    text-decoration: none; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--accent2); }
+        :root {
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1A1A1A;
+            --accent: #C5A572;
+            --accent-light: #D4BC8E;
+            --accent-dark: #A68B5B;
+            --text-primary: #F5F0EB;
+            --text-secondary: #B8B0A4;
+            --text-muted: #7A7268;
+            --border: rgba(197, 165, 114, 0.15);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
 
-  /* HERO — gate / arch motif */
-  .hero {
-    min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 420px;
-    position: relative; overflow: hidden;
-  }
-  /* Arches */
-  .hero::before {
-    content: '';
-    position: absolute;
-    left: 50%; top: 0; transform: translateX(-50%);
-    width: 70vw; height: 70vw;
-    border-radius: 50% 50% 0 0 / 60% 60% 0 0;
-    border: 1px solid rgba(160,136,64,0.06);
-    pointer-events: none; z-index: 0;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    left: 50%; top: 0; transform: translateX(-50%);
-    width: 50vw; height: 50vw;
-    border-radius: 50% 50% 0 0 / 60% 60% 0 0;
-    border: 1px solid rgba(160,136,64,0.04);
-    pointer-events: none; z-index: 0;
-  }
-  .hero-left {
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 140px 70px 90px;
-    position: relative; z-index: 1;
-  }
-  .hero-eyebrow {
-    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--accent2); margin-bottom: 24px; display: block;
-  }
-  .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 6vw, 6.5rem);
-    font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 16px;
-  }
-  .hero-title em { font-style: italic; color: var(--accent2); display: block; }
-  .hero-hotel {
-    font-family: var(--serif); font-size: 1.1rem; font-weight: 300;
-    font-style: italic; color: var(--text2); margin-bottom: 36px;
-    letter-spacing: 0.06em;
-  }
-  .hero-desc {
-    font-size: 0.93rem; color: var(--text2);
-    max-width: 480px; line-height: 1.8; margin-bottom: 40px;
-  }
-  .hero-actions { display: flex; gap: 14px; }
-  .btn-primary {
-    padding: 13px 30px; background: var(--accent); color: var(--bg);
-    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
-    text-decoration: none; font-weight: 500; transition: background 0.2s;
-  }
-  .btn-primary:hover { background: var(--accent2); }
-  .btn-outline {
-    padding: 13px 30px; border: 1px solid var(--border2); color: var(--text2);
-    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
-    text-decoration: none; transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent2); }
+        html { scroll-behavior: smooth; }
 
-  .hero-right {
-    background: var(--bg2); border-left: 1px solid var(--border);
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 140px 48px 90px; position: relative; z-index: 1;
-  }
-  .hero-right::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  }
-  .stat-item { padding: 26px 0; border-bottom: 1px solid var(--border); }
-  .stat-item:last-child { border-bottom: none; }
-  .stat-num { font-family: var(--serif); font-size: 2.6rem; font-weight: 300; color: var(--accent2); line-height: 1; margin-bottom: 4px; }
-  .stat-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3); }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-  section { position: relative; z-index: 1; }
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
 
-  .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent2); margin-bottom: 16px; display: block; }
-  .section-title { font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; }
-  .section-title em { font-style: italic; color: var(--accent2); }
+        .nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 3rem;
+            box-shadow: 0 1px 0 var(--border);
+        }
 
-  /* PHILOSOPHIE */
-  .philosophie { padding: 120px 60px; background: var(--bg2); }
-  .phil-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  .phil-desc { font-size: 0.92rem; color: var(--text2); line-height: 1.8; margin: 20px 0 32px; }
-  .phil-cards { display: flex; flex-direction: column; gap: 16px; }
-  .phil-card {
-    background: var(--bg3); border: 1px solid var(--border); padding: 28px 30px;
-    position: relative; overflow: hidden; transition: border-color 0.3s;
-  }
-  .phil-card:hover { border-color: rgba(160,136,64,0.25); }
-  .phil-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--accent), transparent); }
-  .phil-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; margin-bottom: 7px; }
-  .phil-text { font-size: 0.84rem; color: var(--text2); line-height: 1.65; }
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
 
-  /* MENU */
-  .menu-section { padding: 120px 60px; background: var(--bg); }
-  .menu-inner { max-width: 1200px; margin: 0 auto; }
-  .menu-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-top: 60px; }
-  .menu-card {
-    background: var(--bg2); border: 1px solid var(--border); padding: 48px 38px;
-    position: relative; overflow: hidden; transition: border-color 0.3s;
-  }
-  .menu-card:hover { border-color: rgba(160,136,64,0.2); }
-  .menu-card.featured {
-    border-color: rgba(160,136,64,0.3);
-    background: linear-gradient(150deg, #0E0D0A 0%, var(--bg2) 100%);
-  }
-  .menu-card.featured::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--silver2));
-  }
-  .menu-badge {
-    display: inline-block; background: var(--accent); color: var(--bg);
-    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
-    padding: 4px 12px; margin-bottom: 20px;
-  }
-  .menu-title { font-family: var(--serif); font-size: 1.7rem; font-weight: 300; margin-bottom: 6px; line-height: 1.1; }
-  .menu-price { font-family: var(--serif); font-size: 1.3rem; color: var(--accent2); font-weight: 300; margin-bottom: 18px; display: block; }
-  .menu-desc { font-size: 0.86rem; color: var(--text2); line-height: 1.75; margin-bottom: 24px; }
-  .menu-courses { display: flex; flex-direction: column; gap: 8px; }
-  .course { font-size: 0.8rem; color: var(--text2); display: flex; align-items: center; gap: 10px; }
-  .course::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
 
-  /* KARTE */
-  .karte { padding: 120px 60px; background: var(--bg2); }
-  .karte-inner { max-width: 1200px; margin: 0 auto; }
-  .karte-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-top: 60px; }
-  .karte-col { background: var(--bg3); border: 1px solid var(--border); padding: 44px 36px; transition: border-color 0.3s; }
-  .karte-col:hover { border-color: rgba(160,136,64,0.2); }
-  .karte-col-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
-  .karte-item { padding: 14px 0; border-bottom: 1px solid var(--border); transition: padding-left 0.2s; }
-  .karte-item:last-child { border-bottom: none; }
-  .karte-item:hover { padding-left: 6px; }
-  .karte-item-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-  .karte-item-name { font-family: var(--serif); font-size: 1rem; font-weight: 400; }
-  .karte-item-price { font-size: 0.8rem; color: var(--accent2); white-space: nowrap; flex-shrink: 0; }
-  .karte-item-desc { font-size: 0.73rem; color: var(--text3); margin-top: 3px; line-height: 1.5; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
 
-  /* ADLON BAR */
-  .adlon-bar { padding: 70px 60px; background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .adlon-bar-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
-  .adlon-item { text-align: center; padding: 16px 20px; border-right: 1px solid var(--border); }
-  .adlon-item:last-child { border-right: none; }
-  .adlon-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; color: var(--accent2); margin-bottom: 6px; line-height: 1; }
-  .adlon-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
 
-  /* CONTACT */
-  .contact { padding: 120px 60px; background: var(--bg2); }
-  .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
-  .contact-card { background: var(--bg3); border: 1px solid var(--border); padding: 44px 36px; transition: border-color 0.3s; }
-  .contact-card:hover { border-color: rgba(160,136,64,0.2); }
-  .cc-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-  .cc-title span { font-size: 0.9rem; opacity: 0.5; }
-  .hours-list { display: flex; flex-direction: column; gap: 10px; }
-  .hours-row { display: flex; justify-content: space-between; font-size: 0.86rem; }
-  .hours-day { color: var(--text2); }
-  .hours-time { color: var(--text); font-weight: 400; }
-  .hours-closed { color: var(--text3); font-style: italic; }
-  .contact-detail { display: flex; flex-direction: column; gap: 16px; }
-  .detail-row { display: flex; flex-direction: column; gap: 4px; }
-  .detail-label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3); }
-  .detail-value { font-size: 0.9rem; color: var(--text); }
-  .detail-value a { color: var(--accent2); text-decoration: none; }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::after { width: 100%; }
 
-  footer { background: var(--bg); border-top: 1px solid var(--border); padding: 36px 60px; display: flex; align-items: center; justify-content: space-between; }
-  .footer-logo { font-family: var(--serif); font-size: 1rem; font-weight: 300; letter-spacing: 0.1em; color: var(--text2); line-height: 1.3; }
-  .footer-logo em { font-style: italic; color: var(--accent2); }
-  .footer-copy { font-size: 0.76rem; color: var(--text3); }
-  .footer-stars { color: var(--accent2); font-size: 0.82rem; letter-spacing: 0.12em; }
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
 
-  @media (max-width: 900px) {
-    nav { padding: 20px 24px; }
-    nav.scrolled { padding: 14px 24px; }
-    .nav-links, .nav-cta { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 120px 24px 60px; }
-    .hero-right { display: none; }
-    .hero::before, .hero::after { display: none; }
-    .philosophie, .menu-section, .karte { padding: 72px 24px; }
-    .phil-inner { grid-template-columns: 1fr; gap: 40px; }
-    .menu-cards, .karte-grid { grid-template-columns: 1fr; }
-    .adlon-bar { padding: 48px 24px; }
-    .adlon-bar-inner { grid-template-columns: 1fr 1fr; }
-    .adlon-item { border-right: none; border-bottom: 1px solid var(--border); }
-    .contact { padding: 72px 24px; }
-    .contact-inner { grid-template-columns: 1fr; }
-    footer { padding: 28px 24px; flex-direction: column; gap: 14px; text-align: center; }
-  }
-</style>
+        .nav-toggle span {
+            width: 24px;
+            height: 1.5px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80') center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.95) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-star {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.4s ease;
+        }
+
+        .hero-btn:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* Sections */
+        section { padding: 8rem 2rem; }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-text {
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.9;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--accent);
+            margin: 3rem 0;
+        }
+
+        .divider-center { margin-left: auto; margin-right: auto; }
+
+        /* About */
+        .about { background: var(--bg-secondary); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image:hover img { transform: scale(1.03); }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--border);
+            pointer-events: none;
+        }
+
+        /* Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .highlight-card {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .highlight-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .highlight-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .highlight-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--accent-light);
+        }
+
+        .highlight-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Menu */
+        .menu { background: var(--bg-secondary); text-align: center; }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .menu-cat-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.7rem 2rem;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-cat-btn.active, .menu-cat-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(197,165,114,0.05);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .menu-item {
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover { border-color: rgba(197,165,114,0.3); }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .menu-item .price {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .menu-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .menu-note {
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10,10,10,0.2);
+            transition: background 0.3s ease;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover::after { background: transparent; }
+
+        /* Contact */
+        .contact { background: var(--bg-secondary); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info { display: flex; flex-direction: column; gap: 2.5rem; }
+
+        .contact-block h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--accent-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-block p, .contact-block a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .contact-block a:hover { color: var(--accent); }
+
+        .contact-map {
+            aspect-ratio: 4/3;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.8) contrast(1.1) brightness(0.7);
+            transition: filter 0.4s ease;
+        }
+
+        .contact-map:hover iframe {
+            filter: grayscale(0.3) contrast(1) brightness(0.85);
+        }
+
+        .hours-table { width: 100%; border-collapse: collapse; }
+        .hours-table tr { border-bottom: 1px solid var(--border); }
+        .hours-table td {
+            padding: 0.6rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .hours-table td:first-child { color: var(--text-primary); font-weight: 400; }
+        .hours-table td:last-child { text-align: right; }
+        .closed { color: var(--text-muted) !important; font-style: italic; }
+
+        /* Footer */
+        .footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--accent);
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10,10,10,0.98);
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            .nav-toggle { display: flex; }
+            .about-grid, .contact-grid, .menu-grid { grid-template-columns: 1fr; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            section { padding: 5rem 1.5rem; }
+            .nav { padding: 1rem 1.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a href="#" class="nav-logo">
-    LORENZ ADLON ESSZIMMER
-    <span class="nav-logo-sub">Hotel Adlon Kempinski · Berlin</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#philosophie">Philosophie</a></li>
-    <li><a href="#menu">Menüs</a></li>
-    <li><a href="#karte">Karte</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="tel:+493022611960" class="nav-cta">Reservierung</a>
-</nav>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">Lorenz Adlon</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#philosophie">Philosophie</a></li>
+            <li><a href="#highlights">Highlights</a></li>
+            <li><a href="#karte">Karte</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="https://www.kempinski.com/en/hotel-adlon/restaurants-bars/lorenz-adlon-esszimmer/reservation-lorenz-adlon-esszimmer" target="_blank">Reservieren</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-<section class="hero">
-  <div class="hero-left">
-    <span class="hero-eyebrow">★★ Michelin · Unter den Linden · Berlin</span>
-    <h1 class="hero-title">Lorenz<br><em>Adlon</em></h1>
-    <p class="hero-hotel">Esszimmer · Hotel Adlon Kempinski</p>
-    <p class="hero-desc">
-      Mit Blick auf das Brandenburger Tor — das Lorenz Adlon Esszimmer ist
-      Berlins eleganteste Gourmetadresse. Zwei Michelin-Sterne, modernes
-      Fine Dining in einem der ikonischsten Häuser Deutschlands.
-    </p>
-    <div class="hero-actions">
-      <a href="tel:+493022611960" class="btn-primary">Reservierung</a>
-      <a href="#menu" class="btn-outline">Menüs ansehen</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="stat-item">
-      <div class="stat-num">★★</div>
-      <div class="stat-label">Michelin Sterne</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">Mi–Sa</div>
-      <div class="stat-label">19:00 – 00:00 Uhr</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">Tor</div>
-      <div class="stat-label">Blick auf das Brandenburger Tor</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">1907</div>
-      <div class="stat-label">Hotel Adlon · Gegründet</div>
-    </div>
-  </div>
-</section>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-star">&#9733;</span>
+            <h1 class="hero-title">Wo Kulinarik auf <em>Geschichte</em> trifft</h1>
+            <p class="hero-subtitle">Michelin-Stern Küche mit Blick auf das Brandenburger Tor. Eine Reise durch moderne europäische Hochküche im Herzen Berlins.</p>
+            <a href="#karte" class="hero-btn">Menü entdecken</a>
+        </div>
+    </section>
 
-<section class="philosophie" id="philosophie">
-  <div class="phil-inner">
-    <div>
-      <span class="section-eyebrow">Berlins eleganteste Adresse</span>
-      <h2 class="section-title">Haute Cuisine<br><em>am Brandenburger Tor</em></h2>
-      <p class="phil-desc">
-        Das Lorenz Adlon Esszimmer verbindet die Grande Tradition des Hotel Adlon
-        mit moderner kulinarischer Kreativität. Fine Dining auf höchstem Niveau —
-        klassisch, präzise, unvergesslich.
-      </p>
-    </div>
-    <div class="phil-cards">
-      <div class="phil-card">
-        <div class="phil-title">Ikonischer Ort</div>
-        <p class="phil-text">Das Hotel Adlon ist seit 1907 Mittelpunkt der Berliner Gesellschaft. Das Esszimmer erbt diese Geschichte und macht sie kulinarisch lebendig.</p>
-      </div>
-      <div class="phil-card">
-        <div class="phil-title">Blick auf das Tor</div>
-        <p class="phil-text">Kein Restaurant in Berlin hat eine bedeutendere Aussicht — das Brandenburger Tor als steter Begleiter zu jedem Gang.</p>
-      </div>
-      <div class="phil-card">
-        <div class="phil-title">Moderne Klassik</div>
-        <p class="phil-text">Die Küche balanciert zwischen zeitloser Eleganz und zeitgenössischer Technik — mit zwei Michelin-Sternen ausgezeichnet.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Philosophie -->
+    <section class="about" id="philosophie">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <p class="section-label">Unsere Philosophie</p>
+                    <h2 class="section-title">Perfektion in jedem Detail</h2>
+                    <div class="divider"></div>
+                    <p class="section-text">
+                        Im Lorenz Adlon Esszimmer verschmelzen kulinarische Meisterschaft und zeitlose Eleganz.
+                        Seit der Eröffnung im legendären Hotel Adlon Kempinski verbindet das Restaurant
+                        höchste Kochkunst mit einem unvergesslichen Panorama auf Berlins ikonischstes Wahrzeichen.
+                    </p>
+                    <br>
+                    <p class="section-text">
+                        Jedes Gericht erzählt eine Geschichte — inspiriert von der europäischen Küche,
+                        veredelt durch saisonale Produkte höchster Güte und die kreative Handschrift
+                        unserer Küchenbrigade. Fine Dining, das alle Sinne berührt.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80" alt="Lorenz Adlon Esszimmer Atmosphäre" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="menu-section" id="menu">
-  <div class="menu-inner">
-    <div>
-      <span class="section-eyebrow">Das Erlebnis</span>
-      <h2 class="section-title">Degustation<em>smenüs</em></h2>
-    </div>
-    <div class="menu-cards">
-      <div class="menu-card">
-        <h3 class="menu-title">Adlon Classique</h3>
-        <span class="menu-price">€185 p.P.</span>
-        <p class="menu-desc">Fünf Gänge — die klassische Linie des Hauses. Weinbegleitung auf Anfrage.</p>
-        <div class="menu-courses">
-          <div class="course">Amuse Bouche</div>
-          <div class="course">Kalt · Warm · Hauptgang</div>
-          <div class="course">Dessert & Mignardises</div>
+    <!-- Highlights -->
+    <section id="highlights">
+        <div class="container" style="text-align: center;">
+            <p class="section-label">Das erwartet Sie</p>
+            <h2 class="section-title">Kulinarische Höhepunkte</h2>
+            <div class="divider divider-center"></div>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <span class="highlight-icon">&#9733;</span>
+                    <h3>Michelin-Stern</h3>
+                    <p>Ausgezeichnet mit einem Michelin-Stern für herausragende Küche auf höchstem Niveau mit kreativer Finesse.</p>
+                </div>
+                <div class="highlight-card">
+                    <span class="highlight-icon">&#127860;</span>
+                    <h3>Degustationsmenü</h3>
+                    <p>Mehrgängige Erlebnismenüs, die saisonale Spitzenprodukte in überraschenden Kompositionen zelebrieren.</p>
+                </div>
+                <div class="highlight-card">
+                    <span class="highlight-icon">&#127863;</span>
+                    <h3>Weinbegleitung</h3>
+                    <p>Kuratierte Weinreisen durch Europas beste Lagen — perfekt abgestimmt auf jeden einzelnen Gang.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="menu-card featured">
-        <div class="menu-badge">★★ Signature</div>
-        <h3 class="menu-title">Grand Menu</h3>
-        <span class="menu-price">€285 p.P.</span>
-        <p class="menu-desc">Acht Gänge — die vollständige Interpretation des Lorenz Adlon Esszimmers. Mit Weinbegleitung (€125).</p>
-        <div class="menu-courses">
-          <div class="course">Amuse Bouche Selektion</div>
-          <div class="course">Zwei Kalt-Gänge</div>
-          <div class="course">Zwei Warm-Gänge · Hauptgang</div>
-          <div class="course">Predessert · Dessert</div>
-          <div class="course">Mignardises & Café</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <h3 class="menu-title">Végétarien</h3>
-        <span class="menu-price">€245 p.P.</span>
-        <p class="menu-desc">Sieben Gänge konsequent pflanzlich — Spitzenprodukte ohne Kompromisse.</p>
-        <div class="menu-courses">
-          <div class="course">Gemüse · Wurzel · Pilz</div>
-          <div class="course">Saisonal · Regional</div>
-          <div class="course">Dessert & Mignardises</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="karte" id="karte">
-  <div class="karte-inner">
-    <div>
-      <span class="section-eyebrow">Abendkarte</span>
-      <h2 class="section-title">À <em>la Carte</em></h2>
-    </div>
-    <div class="karte-grid">
-      <div class="karte-col">
-        <div class="karte-col-title">Vorspeisen</div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Beluga Kaviar</span><span class="karte-item-price">€110</span></div>
-          <div class="karte-item-desc">Crème fraîche · Blinis · Gold-Butter</div>
+    <!-- Speisekarte -->
+    <section class="menu" id="karte">
+        <div class="container">
+            <p class="section-label">Kulinarische Kreationen</p>
+            <h2 class="section-title">Unsere Karte</h2>
+            <div class="divider divider-center"></div>
+            <div class="menu-categories">
+                <button class="menu-cat-btn active">Degustationsmenü</button>
+                <button class="menu-cat-btn">À la Carte</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-header"><h4>Amuse-Bouche Variation</h4></div>
+                    <p>Ein Gruß aus der Küche — drei Miniaturen, die den Abend eröffnen und auf die kulinarische Reise einstimmen.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header"><h4>Bretonischer Hummer</h4></div>
+                    <p>Confiert mit Yuzu-Butter, begleitet von Fenchel-Orangen-Salat und einem Hauch Safran-Espuma.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header"><h4>Périgord Trüffel</h4></div>
+                    <p>Auf handgemachter Pasta mit Topinambur-Crème, geröstetem Haselnussöl und Wintergemüse.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header"><h4>Wagyu Beef Tenderloin</h4></div>
+                    <p>Sous-vide gegart, mit Sellerie-Trüffel-Purée, glasierten Schalotten und Rotwein-Jus.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header"><h4>Steinbutt aus der Bretagne</h4></div>
+                    <p>Im Ganzen gebraten mit Beurre Blanc, Erbsen-Minz-Purée und knusprigem Kartoffelstroh.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header"><h4>Valrhona Grand Cru Dessert</h4></div>
+                    <p>Schokoladensoufflé mit Himbeerkern, dazu Tahiti-Vanille-Eis und kandierte Kumquats.</p>
+                </div>
+            </div>
+            <p class="menu-note">Unsere Menüs wechseln saisonal. Preise und aktuelle Gerichte auf Anfrage. Bitte teilen Sie uns Allergien und Unverträglichkeiten bei der Reservierung mit.</p>
         </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Gänselebermousse</span><span class="karte-item-price">€58</span></div>
-          <div class="karte-item-desc">Rhabarber-Chutney · Brioche · Portweinjus</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Bretonische Jakobsmuschel</span><span class="karte-item-price">€68</span></div>
-          <div class="karte-item-desc">Blumenkohl · Trüffelvinaigrette · Räucheraal</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Hummer-Bisque</span><span class="karte-item-price">€42</span></div>
-          <div class="karte-item-desc">Cognac · Crème · Kräuteröl · Croutons</div>
-        </div>
-      </div>
-      <div class="karte-col">
-        <div class="karte-col-title">Hauptgänge</div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Challans-Ente</span><span class="karte-item-price">€82</span></div>
-          <div class="karte-item-desc">Schwarzkirsche · Périgord-Trüffel · Kartoffelpüree</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Atlantik-Seezunge</span><span class="karte-item-price">€92</span></div>
-          <div class="karte-item-desc">Beurre blanc · Artischocke · Kräuter-Gremolata</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Wagyu-Rücken</span><span class="karte-item-price">€110</span></div>
-          <div class="karte-item-desc">Périgord-Trüffel · Morcheln · Sellerie-Püree</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Kalbsfilet Rossini</span><span class="karte-item-price">€96</span></div>
-          <div class="karte-item-desc">Foie gras · Trüffel-Jus · Spinat · Brioche-Chip</div>
-        </div>
-      </div>
-      <div class="karte-col">
-        <div class="karte-col-title">Desserts</div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Schokoladensphäre</span><span class="karte-item-price">€32</span></div>
-          <div class="karte-item-desc">Caramel coulant · Vanille · Gold-Flitter</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Berliner Luft</span><span class="karte-item-price">€26</span></div>
-          <div class="karte-item-desc">Limette · Yuzu-Curd · Ingwer-Sorbet</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Käse-Auswahl</span><span class="karte-item-price">€42</span></div>
-          <div class="karte-item-desc">8 Sorten · Chutney · Nüsse · Brot</div>
-        </div>
-        <div class="karte-item">
-          <div class="karte-item-top"><span class="karte-item-name">Mignardises</span><span class="karte-item-price">inkl.</span></div>
-          <div class="karte-item-desc">Petits Fours zum Menü</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<div class="adlon-bar">
-  <div class="adlon-bar-inner">
-    <div class="adlon-item"><div class="adlon-num">★★</div><div class="adlon-label">Michelin Sterne</div></div>
-    <div class="adlon-item"><div class="adlon-num">1907</div><div class="adlon-label">Hotel Adlon gegründet</div></div>
-    <div class="adlon-item"><div class="adlon-num">Tor</div><div class="adlon-label">Brandenburger Tor · Blick</div></div>
-    <div class="adlon-item"><div class="adlon-num">Mi–Sa</div><div class="adlon-label">19:00 – 00:00 Uhr</div></div>
-  </div>
-</div>
+    <!-- Galerie -->
+    <section id="galerie">
+        <div class="container" style="text-align: center;">
+            <p class="section-label">Einblicke</p>
+            <h2 class="section-title">Impressionen</h2>
+            <div class="divider divider-center"></div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant Interior" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=800&q=80" alt="Weinauswahl" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&q=80" alt="Küche" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80" alt="Dessert Kreation" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80" alt="Fine Dining Tisch" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80" alt="Atmosphäre" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
 
-<section class="contact" id="kontakt">
-  <div style="text-align:center; margin-bottom: 48px;">
-    <span class="section-eyebrow">Hotel Adlon Kempinski · Berlin-Mitte</span>
-    <h2 class="section-title">Reservierung &<br><em>Kontakt</em></h2>
-  </div>
-  <div class="contact-inner">
-    <div class="contact-card">
-      <h3 class="cc-title"><span>🕐</span> Öffnungszeiten</h3>
-      <div class="hours-list">
-        <div class="hours-row"><span class="hours-day">Mittwoch – Samstag</span><span class="hours-time">19:00 – 00:00</span></div>
-        <div class="hours-row"><span class="hours-day">Mo / Di / So</span><span class="hours-closed">geschlossen</span></div>
-      </div>
-    </div>
-    <div class="contact-card">
-      <h3 class="cc-title"><span>📍</span> Adresse</h3>
-      <div class="contact-detail">
-        <div class="detail-row">
-          <span class="detail-label">Haus</span>
-          <span class="detail-value">Hotel Adlon Kempinski Berlin</span>
+    <!-- Kontakt -->
+    <section class="contact" id="kontakt">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <p class="section-label">Besuchen Sie uns</p>
+                <h2 class="section-title">Kontakt & Reservierung</h2>
+                <div class="divider divider-center"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-block">
+                        <h3>Adresse</h3>
+                        <p>Unter den Linden 77<br>10117 Berlin<br>Im Hotel Adlon Kempinski</p>
+                    </div>
+                    <div class="contact-block">
+                        <h3>Reservierung</h3>
+                        <p><a href="tel:+493022611960">+49 30 2261 1960</a></p>
+                        <p><a href="https://www.lorenzadlon-esszimmer.de" target="_blank">lorenzadlon-esszimmer.de</a></p>
+                    </div>
+                    <div class="contact-block">
+                        <h3>Öffnungszeiten</h3>
+                        <table class="hours-table">
+                            <tr><td>Montag</td><td class="closed">Geschlossen</td></tr>
+                            <tr><td>Dienstag</td><td class="closed">Geschlossen</td></tr>
+                            <tr><td>Mittwoch</td><td>19:00 – 00:00</td></tr>
+                            <tr><td>Donnerstag</td><td>19:00 – 00:00</td></tr>
+                            <tr><td>Freitag</td><td>19:00 – 00:00</td></tr>
+                            <tr><td>Samstag</td><td>19:00 – 00:00</td></tr>
+                            <tr><td>Sonntag</td><td class="closed">Geschlossen</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.9!2d13.3784!3d52.5163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x41b8e1e431799b8!2sHotel%20Adlon%20Kempinski%20Berlin!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Lorenz Adlon Esszimmer"></iframe>
+                </div>
+            </div>
         </div>
-        <div class="detail-row">
-          <span class="detail-label">Straße</span>
-          <span class="detail-value">Unter den Linden 77<br>10117 Berlin-Mitte</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">ÖPNV</span>
-          <span class="detail-value">S-Bahn Brandenburger Tor · 1 min</span>
-        </div>
-      </div>
-    </div>
-    <div class="contact-card">
-      <h3 class="cc-title"><span>☎</span> Kontakt</h3>
-      <div class="contact-detail">
-        <div class="detail-row">
-          <span class="detail-label">Telefon</span>
-          <span class="detail-value"><a href="tel:+493022611960">+49 30 22 61 19 60</a></span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">Website</span>
-          <span class="detail-value"><a href="https://www.lorenzadlon-esszimmer.de">lorenzadlon-esszimmer.de</a></span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">Hinweis</span>
-          <span class="detail-value">Reservierung mehrere Wochen vorab empfohlen</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer>
-  <div class="footer-logo">LORENZ ADLON <em>ESSZIMMER</em></div>
-  <div class="footer-copy">© 2025 · Unter den Linden 77 · 10117 Berlin</div>
-  <div class="footer-stars">★★ Michelin · Hotel Adlon Kempinski</div>
-</footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">Lorenz Adlon Esszimmer</div>
+        <ul class="footer-links">
+            <li><a href="#philosophie">Philosophie</a></li>
+            <li><a href="#karte">Karte</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="https://www.kempinski.com/de/hotel-adlon" target="_blank">Hotel Adlon</a></li>
+        </ul>
+        <p>Unter den Linden 77 &middot; 10117 Berlin &middot; +49 30 2261 1960</p>
+        <p style="margin-top: 0.5rem;">&copy; 2026 Lorenz Adlon Esszimmer. Alle Rechte vorbehalten.</p>
+    </footer>
 
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-</script>
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        document.querySelectorAll('.menu-cat-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.menu-cat-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
